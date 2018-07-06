@@ -1,0 +1,23 @@
+{
+  "name": "fieldset-type",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guja1501/fieldset-object.git"
+  },
+  "keywords": [
+    "fieldset",
+    "type",
+    "object",
+    "array",
+    "collection"
+  ],
+  "author": "Guja Babunashvili",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guja1501/fieldset-object/issues"
+  },
+  "homepage": "https://github.com/Guja1501/fieldset-object#readme"
+}
