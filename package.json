@@ -25,9 +25,7 @@
   "homepage": "https://github.com/Guja1501/fieldset-object#readme",
   "devDependencies": {
     "mocha": "^5.2.0",
-    "jsdom": "^11.11.0"
-  },
-  "dependencies": {
+    "jsdom": "^11.11.0",
     "jquery": "^3.3.1"
   }
 }
