@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/Guja1501/fieldset-object.git"
   },
+  "scripts": {
+    "test": "mocha"
+  },
   "keywords": [
     "fieldset",
     "type",
@@ -19,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/Guja1501/fieldset-object/issues"
   },
-  "homepage": "https://github.com/Guja1501/fieldset-object#readme"
+  "homepage": "https://github.com/Guja1501/fieldset-object#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "jsdom": "^11.11.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }

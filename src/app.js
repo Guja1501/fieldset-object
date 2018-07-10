@@ -4,7 +4,7 @@
  * @property {Array<Fieldset>} children
  * @property {Object} indexes
  */
-class Fieldset {
+const Fieldset = class {
 	/**
 	 * @param {Element | Node} fieldset
 	 * @param {Fieldset|null} parent
@@ -19,7 +19,7 @@ class Fieldset {
 		this.indexes = {};
 		this.inputs = [];
 
-		if (this.element.hasAttribute(Fieldset.config.keys.fsName)) {
+		if (this.rightFieldset && this.element.hasAttribute(Fieldset.config.keys.fsName)) {
 			this.element.setAttribute(Fieldset.config.keys.iName, this.name);
 		}
 
@@ -72,6 +72,10 @@ class Fieldset {
 
 	get multiple() {
 		return this.name.endsWith('[]');
+	}
+
+	get rightFieldset() {
+		return Fieldset.isRightFieldset(this.element);
 	}
 
 	/**
@@ -148,9 +152,7 @@ class Fieldset {
 		return el.hasAttribute('name') && !el.hasAttribute(Fieldset.config.keys.skip);
 	}
 
-	static applyOnForms(formSelector) {
-		const forms = document.querySelectorAll(formSelector);
-
+	static apply(...forms) {
 		for (let form of forms) {
 			(new Fieldset(form))
 				.forceReset()
@@ -158,23 +160,23 @@ class Fieldset {
 				.applyInputs();
 		}
 	}
+};
 
-	static init() {
-		Fieldset.config = {
-			keys: {
-				skip: 'data-fs-skip',
-				fsName: 'data-fs-name',
-				iName: 'data-fs-native-name',
-				formKey: 'data-fs-form-key',
-				fieldsetKey: 'data-fs-fieldset-key',
-				fieldsetIndex: 'data-fs-index',
-				initFormOnFieldsetInit: 'data-fs-on-init',
-			},
-		};
+Fieldset.config = {
+	keys: {
+		skip: 'data-fs-skip',
+		fsName: 'data-fs-name',
+		iName: 'data-fs-native-name',
+		formKey: 'data-fs-form-key',
+		fieldsetKey: 'data-fs-fieldset-key',
+		fieldsetIndex: 'data-fs-index',
+		initFormOnFieldsetInit: 'data-fs-on-init',
+	},
+};
 
-		Fieldset.applyOnForms.apply(`form[${Fieldset.config.keys.initFormOnFieldsetInit}]`);
-	}
+if (typeof document !== 'undefined') {
+	Fieldset.applyOnForms.apply(`form[${Fieldset.config.keys.initFormOnFieldsetInit}]`)
 }
 
-Fieldset.init();
+module.exports = Fieldset;
 
