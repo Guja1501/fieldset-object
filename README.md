@@ -12,7 +12,7 @@ click [here](CASES.md) to see cases.
 
 ### Installing
 
-`npm install --save sensor-afk`
+`npm install --save fieldset-object`
 
 ### Examples
 
