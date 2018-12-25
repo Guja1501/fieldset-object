@@ -175,7 +175,7 @@ Fieldset.config = {
 };
 
 if (typeof document !== 'undefined') {
-	Fieldset.applyOnForms.apply(`form[${Fieldset.config.keys.initFormOnFieldsetInit}]`)
+	Fieldset.apply(`form[${Fieldset.config.keys.initFormOnFieldsetInit}]`)
 }
 
 module.exports = Fieldset;

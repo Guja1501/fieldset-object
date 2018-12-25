@@ -2,7 +2,7 @@
   "name": "fieldset-object",
   "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Guja1501/fieldset-object.git"
