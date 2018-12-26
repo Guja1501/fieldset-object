@@ -178,7 +178,7 @@ if (typeof document !== 'undefined') {
 	let selector = `form[${Fieldset.config.keys.initFormOnFieldsetInit}]`;
 	let forms = document.querySelectorAll(selector);
 
-	Fieldset.apply(...Array.from(forms))
+	Fieldset.apply(...[].concat(...Array.from(forms)));
 }
 
 module.exports = Fieldset;
