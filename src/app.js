@@ -34,13 +34,13 @@ const Fieldset = class {
 
 					this.children.push(fs);
 				} else {
-					if (Fieldset.isRightInput(child)) {
+					if (this.rightFieldset && Fieldset.isRightInput(child)) {
 						child.setAttribute(Fieldset.config.keys.iName, child.getAttribute('name'));
 
 						this.inputs.push(child);
 					}
 
-					[].push.apply(queue, Array.from(child.children));
+					queue.push(...Array.from(child.children));
 				}
 			}
 
